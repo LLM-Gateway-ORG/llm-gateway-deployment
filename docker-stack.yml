@@ -18,7 +18,6 @@ services:
       - SECRET_KEY=v6nvsn^*dh5d839)^dp1y2s+3q06o&u^4hm@3msf)50s+^t@1p
     networks:
       - nginx_network
-    pull_policy: always
     deploy:
       replicas: 2
       update_config:
@@ -34,7 +33,6 @@ services:
       - nginx_network
     env_file:
       - .envs/.console
-    pull_policy: always
     deploy:
       replicas: 2
       update_config:
@@ -58,7 +56,6 @@ services:
       - console
     networks:
       - nginx_network
-    pull_policy: always
     deploy:
       replicas: 1
       # placement:
