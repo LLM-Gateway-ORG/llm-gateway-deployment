@@ -18,12 +18,12 @@ services:
       - SECRET_KEY=v6nvsn^*dh5d839)^dp1y2s+3q06o&u^4hm@3msf)50s+^t@1p
     networks:
       - nginx_network
+    pull_policy: always
     deploy:
       replicas: 2
       update_config:
         parallelism: 1
         delay: 10s
-      pull_policy: always
       restart_policy:
         condition: on-failure
         max_attempts: 3
@@ -34,12 +34,12 @@ services:
       - nginx_network
     env_file:
       - .envs/.console
+    pull_policy: always
     deploy:
       replicas: 2
       update_config:
         parallelism: 1
         delay: 10s
-      pull_policy: always
       restart_policy:
         condition: on-failure
 
@@ -58,12 +58,12 @@ services:
       - console
     networks:
       - nginx_network
+    pull_policy: always
     deploy:
       replicas: 1
       # placement:
       #   constraints:
       #     - node.role == manager
-      pull_policy: always
       restart_policy:
         condition: on-failure
 
