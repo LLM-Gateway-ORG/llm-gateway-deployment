@@ -19,7 +19,7 @@ services:
     networks:
       - nginx_network
     deploy:
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 1
         delay: 10s
@@ -48,7 +48,7 @@ services:
     env_file:
       - .envs/.console
     deploy:
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 1
         delay: 10s
