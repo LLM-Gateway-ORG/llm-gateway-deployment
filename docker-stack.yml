@@ -79,6 +79,8 @@ services:
       - ./nginx/:/etc/nginx/conf.d
       - static_volume:/usr/src/main/static
       - media_volume:/usr/src/main/media
+      - ./nginx/wait-for-services.sh:/wait-for-services.sh
+    entrypoint: ["/bin/sh", "/wait-for-services.sh"]
     depends_on:
       - backend
       - console
