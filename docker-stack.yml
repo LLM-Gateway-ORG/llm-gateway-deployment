@@ -45,6 +45,9 @@ services:
     image: subhomoy/llm-gateway-console:latest
     networks:
       - nginx_network
+    volumes:
+      # React reads variables from .env file not from environment variables
+      - ./.envs/.console:/app/.env
     env_file:
       - .envs/.console
     deploy:
