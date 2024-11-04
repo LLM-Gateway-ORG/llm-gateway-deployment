@@ -42,14 +42,14 @@ services:
       start_period: 40s
 
   console:
-    image: subhomoy/llm-gateway-console:latest
+    image: subhomoy/llm-gateway-console:latest-${BUILD_TAG}
     networks:
       - nginx_network
-    volumes:
-      # React reads variables from .env file not from environment variables
-      - ./.envs/.console:/app/.env
-    env_file:
-      - .envs/.console
+    # volumes:
+    #   # React reads variables from .env file not from environment variables
+    #   - ./.envs/.console:/app/.env
+    # env_file:
+    #   - .envs/.console
     deploy:
       replicas: 1
       update_config:
