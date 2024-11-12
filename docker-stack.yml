@@ -45,9 +45,6 @@ services:
     image: subhomoy/llm-gateway-console:latest-${BUILD_TAG}
     networks:
       - nginx_network
-    # volumes:
-    #   # React reads variables from .env file not from environment variables
-    #   - ./.envs/.console:/app/.env
     # env_file:
     #   - .envs/.console
     deploy:
@@ -76,7 +73,7 @@ services:
     image: nginx:alpine
     ports:
       - published: 80
-        target: 8000
+        target: 80
         mode: host
     volumes:
       - ./nginx/:/etc/nginx/conf.d
