@@ -21,16 +21,16 @@ fi
 echo "🚀 Deploying llm-gateway with BUILD_TAG=$BUILD_ENV"
 
 # Remove the existing stack if it exists
-if docker stack ls | grep -q "llm-gateway"; then
-    echo "🗑️  Removing existing stack..."
-    docker stack rm llm-gateway
+# if docker stack ls | grep -q "llm-gateway"; then
+#     echo "🗑️  Removing existing stack..."
+#     docker stack rm llm-gateway
 
-    # Wait for stack to be fully removed (more efficient than sleep)
-    while docker stack ls | grep -q "llm-gateway"; do
-        echo "⏳ Waiting for stack removal..."
-        sleep 2
-    done
-fi
+#     # Wait for stack to be fully removed (more efficient than sleep)
+#     while docker stack ls | grep -q "llm-gateway"; do
+#         echo "⏳ Waiting for stack removal..."
+#         sleep 2
+#     done
+# fi
 
 # Deploy the new stack
 echo "📦 Deploying new stack..."
