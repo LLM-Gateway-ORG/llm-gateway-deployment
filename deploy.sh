@@ -20,6 +20,10 @@ fi
 
 echo "🚀 Deploying llm-gateway with BUILD_TAG=$BUILD_ENV"
 
+# Pull all current images
+echo "Pulling current images"
+docker-compose -f docker-stack.yml pull
+
 # Remove the existing stack if it exists
 # if docker stack ls | grep -q "llm-gateway"; then
 #     echo "🗑️  Removing existing stack..."
