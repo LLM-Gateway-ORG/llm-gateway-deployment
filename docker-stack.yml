@@ -41,7 +41,7 @@ services:
       update_config:
         parallelism: 1
         delay: 10s
-        order: start-first
+        order: stop-first
       restart_policy:
         condition: on-failure
         max_attempts: 3
@@ -80,7 +80,7 @@ services:
       update_config:
         parallelism: 1
         delay: 10s
-        order: start-first
+        order: stop-first
       restart_policy:
         condition: on-failure
       # resources:
