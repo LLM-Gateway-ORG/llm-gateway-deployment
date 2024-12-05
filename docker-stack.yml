@@ -99,6 +99,9 @@ services:
 
   traefik:
     image: traefik:v3.1
+    environment:
+      - CF_API_EMAIL=subhomoyrchoudhury@gmail.com
+      - CF_API_KEY=<API Key>
     command:
       - "--api.insecure=true"
       - "--providers.docker"
